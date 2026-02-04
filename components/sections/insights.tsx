@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
@@ -43,11 +41,10 @@ export function Insights() {
           </SectionTitle>
           <Link
             href="#"
-            className="hidden md:inline-flex items-center gap-2 text-sm transition-colors"
-            style={{ color: "#203eec" }}
+            className="hidden md:inline-flex items-center gap-2 text-sm text-brand transition-colors hover:text-brand/80"
           >
             View all insights
-            <ArrowUpRight className="w-4 h-4" style={{ color: "#203eec" }} />
+            <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
@@ -87,11 +84,10 @@ export function Insights() {
         <div className="md:hidden mt-8 text-center">
           <Link
             href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border rounded-full hover:bg-secondary transition-colors"
-            style={{ color: "#203eec", borderColor: "#203eec" }}
+            className="btn-outline-brand inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-colors"
           >
             View all insights
-            <ArrowUpRight className="w-4 h-4" style={{ color: "#203eec" }} />
+            <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

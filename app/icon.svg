@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Until this issue is fixed https://github.com/vercel/next.js/issues/78520
+You need to have the SVG with width="32px" height="32px" 
+Otherwise, Chrome might choose the favicon.ico instead
+-->
+<svg width="32px" height="32px" viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>@supports (color: oklch(0% 0 0)) {@media (color-gamut: p3) { path[fill="url(#a)"] { fill: url(#b) }}}</style>
+    <linearGradient id="a" x1=".5" y1="0" x2=".85" y2=".85">
+        <stop offset="0" stop-color="#00f2d2" />
+        <stop offset=".5" stop-color="#0091ff" />
+        <stop offset="1" stop-color="#6e69f3" />
+    </linearGradient>
+    <linearGradient id="b" x1=".5" y1="0" x2=".85" y2=".85">
+        <stop offset="0" stop-color="oklch(0.85 0.2 180)"/>
+        <stop offset=".5" stop-color="oklch(0.65 0.2 250)"/>
+        <stop offset="1" stop-color="oklch(0.6 0.2 280)"/>
+    </linearGradient>
+    <path d="m256 43c117.636652 0 213 95.363348 213 213 0 1.016044-.007114 2.030426-.021295 3.0431.013277.462139.021295.927333.021295 1.3944v168.625c0 22.056872-17.880628 39.9375-39.9375 39.9375s-39.9375-17.880628-39.9375-39.9375l.002458-6.781468c-36.465923 29.233057-82.754664 46.718968-133.127458 46.718968-117.636652 0-213-95.363348-213-213s95.363348-213 213-213zm0 79.875c-73.522907 0-133.125 59.602093-133.125 133.125s59.602093 133.125 133.125 133.125 133.125-59.602093 133.125-133.125-59.602093-133.125-133.125-133.125zm0 115.375c9.803054 0 17.75 7.946946 17.75 17.75s-7.946946 17.75-17.75 17.75-17.75-7.946946-17.75-17.75 7.946946-17.75 17.75-17.75zm62.125 0c9.803054 0 17.75 7.946946 17.75 17.75s-7.946946 17.75-17.75 17.75-17.75-7.946946-17.75-17.75 7.946946-17.75 17.75-17.75zm-124.25 0c9.803054 0 17.75 7.946946 17.75 17.75s-7.946946 17.75-17.75 17.75-17.75-7.946946-17.75-17.75 7.946946-17.75 17.75-17.75z" fill="url(#a)"/>
+</svg>

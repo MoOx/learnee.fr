@@ -1,17 +1,16 @@
 "use client";
 
-import type React from "react";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SVGLogo from "@/svgs/components/SVGLogo";
+import SvgWithGradient from "@/components/ui/SvgWithGradient";
 
 const navItems = [
-  // { href: "#works", label: "Réalisations", number: "01" },
-  // { href: "#about", label: "À propos", number: "02" },
-  // { href: "#testimonials", label: "Témoignages", number: "03" },
-  // { href: "#contact", label: "Contact", number: "04" },
+  { href: "/approche", label: "Approche", number: "01" },
+  { href: "/offres", label: "Offres", number: "02" },
+  { href: "/a-propos", label: "À propos", number: "03" },
 ];
 
 export function Header() {
@@ -26,26 +25,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 80; // Height of fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <>
       <header
@@ -59,15 +38,13 @@ export function Header() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
           <nav className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="text-lg font-semibold tracking-tight"
-            >
-              Learnee
+            <Link href="/" className="flex items-center">
+              <SvgWithGradient
+                svg={SVGLogo}
+                colors={[["#203eec", "#00d4ff"]]}
+                angle={135}
+                className="h-5 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -76,7 +53,6 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {item.label}
@@ -91,16 +67,9 @@ export function Header() {
             <div className="hidden md:block">
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-full text-white transition-all hover:shadow-xl relative overflow-hidden group"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
-                  boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
-                }}
+                className="btn-primary inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-full text-white"
               >
-                <span className="relative z-10">Me contacter</span>
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-gradient-to-r from-[#203eec] to-[#00d4ff]" />
+                Me contacter
               </Link>
             </div>
 
@@ -121,8 +90,13 @@ export function Header() {
         <div className="fixed inset-0 z-50 bg-background md:hidden">
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between">
-              <Link href="/" className="text-lg font-semibold tracking-tight">
-                Learnee
+              <Link href="/" className="flex items-center">
+                <SvgWithGradient
+                  svg={SVGLogo}
+                  colors={[["#203eec", "#00d4ff"]]}
+                  angle={135}
+                  className="h-5 w-auto"
+                />
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -137,7 +111,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="text-3xl font-semibold hover:text-muted-foreground transition-colors"
                 >
                   {item.label}
@@ -148,16 +122,9 @@ export function Header() {
               <Link
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium rounded-full text-white transition-all hover:shadow-xl relative overflow-hidden group"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
-                  boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
-                }}
+                className="btn-primary inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium rounded-full text-white"
               >
-                <span className="relative z-10">Me contacter</span>
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-gradient-to-r from-[#203eec] to-[#00d4ff]" />
+                Me contacter
               </Link>
             </div>
           </div>

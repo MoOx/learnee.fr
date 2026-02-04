@@ -1,5 +1,3 @@
-"use client"
-
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { SectionTitle } from "@/components/ui/section-title"
@@ -37,9 +35,8 @@ export function Awards() {
                 <span className="text-sm text-muted-foreground font-medium">{award.year}</span>
               </div>
               <ArrowUpRight
-                className="w-8 h-8 md:w-10 md:h-10 ml-6 text-muted-foreground transition-all group-hover:translate-x-1"
+                className="w-8 h-8 md:w-10 md:h-10 ml-6 text-brand transition-all group-hover:translate-x-1"
                 strokeWidth={1}
-                style={{ color: "#203eec" }}
               />
             </Link>
           ))}

@@ -1,30 +1,66 @@
-# AI Product Portfolio
+# Learnee - Site Web
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+## Avancement
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/mooxitoh/v0-ai-product-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/niHg6CkNMwQ)
+### Pages
 
-## Overview
+| Page | Status | Notes |
+|------|--------|-------|
+| Home (`/`) | ✅ Fait | Toutes les sections créées |
+| Approche (`/approche`) | ✅ Fait | Méthode, audit, livrables |
+| Offres (`/offres`) | ✅ Fait | 3 offres + CTA devis |
+| À propos (`/a-propos`) | ✅ Fait | Bio Hélène, parti pris |
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### Composants partagés
 
-## Deployment
+| Composant | Status | Notes |
+|-----------|--------|-------|
+| Header | ✅ Fait | Logo Learnee, nav vers pages |
+| Footer | ✅ Fait | LinkedIn, email, textes FR |
+| Hero | ✅ Fait | Ton agence, nouveau contenu |
 
-Your project is live at:
+---
 
-**[https://vercel.com/mooxitoh/v0-ai-product-portfolio](https://vercel.com/mooxitoh/v0-ai-product-portfolio)**
+## Structure des pages
 
-## Build your app
+### Home (`/`)
 
-Continue building your app on:
+- [x] Hero
+- [x] Section "Le problème"
+- [x] Section "La formation"
+- [x] Section "Promesse"
+- [x] Section "Comment on travaille"
+- [x] CTA final
 
-**[https://v0.app/chat/niHg6CkNMwQ](https://v0.app/chat/niHg6CkNMwQ)**
+### Approche (`/approche`)
 
-## How It Works
+- [x] Hero/Intro
+- [x] Méthode LEARNEE
+- [x] Audit cognitif (2 expertises)
+- [x] Méthode d'audit
+- [x] Ce que vous recevez (livrables)
+- [x] Accompagnement sur-mesure
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+### Offres (`/offres`)
+
+- [x] Audit Express
+- [x] Audit 360
+- [x] Accompagnement
+- [x] CTA devis
+
+### À propos (`/a-propos`)
+
+- [x] Bio Hélène
+- [x] Parti pris
+- [x] Photo/visuel
+- [x] Lien LinkedIn
+
+---
+
+## Navigation
+
+- Accueil → `/`
+- Approche → `/approche`
+- Offres → `/offres`
+- À propos → `/a-propos`
+- Contact → `#contact` (section sur chaque page)

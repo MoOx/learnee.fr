@@ -1,7 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
+import SVGLogo from "@/svgs/components/SVGLogo";
+import SvgWithGradient from "@/components/ui/SvgWithGradient";
+import { MailtoLink } from "@/components/mailto-link";
 
 const socialLinks = [
   {
@@ -13,10 +14,9 @@ const socialLinks = [
 
 const footerLinks = [
   { href: "/", label: "Accueil" },
-  { href: "#about", label: "À propos" },
-  { href: "#works", label: "Réalisations" },
-  { href: "#testimonials", label: "Témoignages" },
-  { href: "#contact", label: "Contact" },
+  { href: "/approche", label: "Approche" },
+  { href: "/offres", label: "Offres" },
+  { href: "/a-propos", label: "À propos" },
 ];
 
 export function Footer() {
@@ -26,8 +26,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="text-xl font-semibold tracking-tight">
-              Learnee
+            <Link href="/" className="inline-flex">
+              <SvgWithGradient
+                svg={SVGLogo}
+                colors={[["#203eec", "#00d4ff"]]}
+                angle={135}
+                className="h-5 w-auto"
+              />
             </Link>
             <p className="mt-4 text-muted-foreground text-sm max-w-xs leading-relaxed">
               Conseil en stratégie et innovation pédagogique. Conception
@@ -39,31 +44,18 @@ export function Footer() {
                 <Link
                   key={social.label}
                   href={social.href}
-                  className="p-2 rounded-full bg-secondary transition-colors hover:bg-opacity-10"
-                  style={{ ["--hover-bg" as any]: "#203eec20" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.backgroundColor = "#203eec20")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.backgroundColor = "")
-                  }
+                  className="p-2 rounded-full bg-secondary transition-colors hover-bg-brand"
                   aria-label={social.label}
                 >
-                  <social.icon
-                    className="w-4 h-4"
-                    style={{ color: "#203eec" }}
-                  />
+                  <social.icon className="w-4 h-4 text-brand" />
                 </Link>
               ))}
-            </div>
-            <div className="mt-4">
-              <Link
-                href="mailto:helene@learnee.fr"
-                className="text-sm transition-colors hover:underline"
-                style={{ color: "#203eec" }}
+              <MailtoLink
+                className="p-2 rounded-full bg-secondary transition-colors hover-bg-brand"
+                aria-label="Email"
               >
-                helene@learnee.fr
-              </Link>
+                <Mail className="w-4 h-4 text-brand" />
+              </MailtoLink>
             </div>
           </div>
 
@@ -117,11 +109,8 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-16 pt-8 border-t border-border">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Learnee. Tous droits réservés.
-          </p>
           <div className="flex items-center gap-6">
-            <Link
+            {/* <Link
               href="#"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -132,8 +121,11 @@ export function Footer() {
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Mentions légales
-            </Link>
+            </Link> */}
           </div>
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Learnee. Tous droits réservés.
+          </p>
         </div>
       </div>
     </footer>
